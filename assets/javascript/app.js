@@ -1,7 +1,12 @@
 var buttons = [];
+
 function renderButtons() {
 
-    $("#buttons-view").empty();
+    if(buttons.length === 0){
+        $("#button-container").hide()
+    } else
+
+    $("#buttons-view").empty(); 
 
     for (var i = 0; i < buttons.length; i++) {
 
@@ -18,6 +23,9 @@ function renderButtons() {
 }
 
 $(document).on("click", ".gif-button", function() {
+
+    $("#gif-container").empty();
+    $("#gif-container").show();
     var gifQuery = $(this).attr("data-name");
     var limit = $("#limit-select").val();
     var APIKey = "F4AXTpFDRkN69Uak0hQ3SZhEvy4XNcpm";
@@ -59,4 +67,10 @@ $("#add-category").on("click", function(event) {
     buttons.push(label);
     renderButtons();
 
-  });
+    if(buttons.length > 0){
+        $("#button-container").show();
+    }
+});
+
+$("#gif-container").hide();
+renderButtons();
