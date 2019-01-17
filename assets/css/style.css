@@ -45,9 +45,8 @@ h1{
     color: white;
 }
 
-@media only screen and (max-width: 3000px) {
-    .header-container {
-        background-color: #404040;
-        border: none;
+@media only screen and (max-width: 600px) {
+    .gif {
+        float: none;
     }
 }
