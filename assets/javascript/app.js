@@ -7,7 +7,7 @@ function renderButtons() {
 
         var newButton = $("<button>");
         
-        newButton.addClass("gif-button");
+        newButton.addClass("btn btn-light gif-button");
         
         newButton.attr({"data-name": buttons[i], "data-number": i + 1});
         
@@ -19,9 +19,10 @@ function renderButtons() {
 
 $(document).on("click", ".gif-button", function() {
     var gifQuery = $(this).attr("data-name");
+    var limit = $("#limit-select").val();
     var APIKey = "F4AXTpFDRkN69Uak0hQ3SZhEvy4XNcpm";
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      gifQuery + "&api_key=" + APIKey;
+      gifQuery + "&api_key=" + APIKey + "&limit=" + limit;
 
     $.ajax({
       url: queryURL,
@@ -33,6 +34,8 @@ $(document).on("click", ".gif-button", function() {
           var gifDiv = $("<div>");
 
           var rating = results[i].rating;
+
+          rating = rating.toUpperCase();
 
           var ratingHTML = $("<p>").text("Rating: " + rating);
 
@@ -50,13 +53,8 @@ $(document).on("click", ".gif-button", function() {
 $("#add-category").on("click", function(event) {
     
     event.preventDefault();
-    // This line of code will grab the input from the textbox
     var label = $("#user-input").val().trim();
-
-    // The movie from the textbox is then added to our array
     buttons.push(label);
-
-    // Calling renderButtons which handles the processing of our movie array
     renderButtons();
 
   });
