@@ -1,8 +1,50 @@
 body {
     text-align: center;
     align-content: center;
+    color: white;
+    background-color: #404040;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-select {
-    width: 20px;
+h1{
+    font-family: 'Coiny', cursive;
+}
+
+
+.row{
+   border-color: #808080;     
+}
+.container{
+    padding: 20px;
+    border: solid;
+    border-width: 2px;
+    border-color: #808080;
+    border-radius: 10px;
+}
+
+.gif{
+    border-color: #808080;
+    background-color: #606060;
+    border-radius: 10px;
+    width: 33%;
+    float: left;
+    padding: 20px;
+}
+
+.btn-primary{
+    background-color: darkcyan;
+    border-color: #808080
+}
+
+.form-control{
+    background-color: #606060;
+    border-color:#808080;
+    color: white;
+}
+
+@media only screen and (max-width: 3000px) {
+    .header-container {
+        background-color: #404040;
+        border: none;
+    }
 }

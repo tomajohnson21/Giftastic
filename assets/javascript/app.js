@@ -7,12 +7,12 @@ function renderButtons() {
 
         var newButton = $("<button>");
         
-        newButton.addClass("btn btn-light gif-button");
+        newButton.addClass("btn btn-primary gif-button");
         
         newButton.attr({"data-name": buttons[i], "data-number": i + 1});
         
         newButton.text(buttons[i]);
-        // Added the button to the buttons-view div
+
         $("#buttons-view").append(newButton);
     }
 }
@@ -32,6 +32,8 @@ $(document).on("click", ".gif-button", function() {
 
         for (var i = 0; i < results.length; i++) {
           var gifDiv = $("<div>");
+          
+          gifDiv.addClass("gif");
 
           var rating = results[i].rating;
 
