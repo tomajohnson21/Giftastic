@@ -24,8 +24,6 @@ function renderButtons() {
 
 $(document).on("click", ".gif-button", function() {
 
-    $("#gif-container").empty();
-    $("#gif-container").show();
     var gifQuery = $(this).attr("data-name");
     var limit = $("#limit-select").val();
     var APIKey = "F4AXTpFDRkN69Uak0hQ3SZhEvy4XNcpm";
@@ -36,6 +34,8 @@ $(document).on("click", ".gif-button", function() {
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+        $("#gif-view").empty();
+        $("#gif-container").show();
         var results = response.data;
 
         for (var i = 0; i < results.length; i++) {
